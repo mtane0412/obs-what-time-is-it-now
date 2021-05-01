@@ -18,6 +18,9 @@ body {
 h1 {
   margin: 100px 0 10px;
 }
+main {
+  align-self: flex-start;
+}
 #time {
   font-size: 100px;
   font-family: sans-serif;
@@ -28,19 +31,19 @@ h2 + p {
   margin: 10px 0;
 }
 #custom {
-  margin: 40px 0 100px;
+  margin: 40px 0 0;
 }
 pre {
   margin: 14px 0 0;
   padding: 10px;
   background: #f1f1f1;
 }
-pre + p {
-  margin: 40px 0 0;
+footer {
+  margin: 40px 0 100px;
   font-size: 12px;
   text-align: center;
 }
-pre + p a {
+footer a {
   color: #555;
 }
 </style>
@@ -68,13 +71,13 @@ body {
 header, #custom, footer {
   display: none;
 }</code></pre>
-
 </div>
 </main>
 
 <footer>
 <p><a href="https://github.com/KawarabeEcma/what-time-is-it-now">Contact (GitHub)</a></p>
 </footer>
+
 <script>
 const time = document.getElementById('time');
 
