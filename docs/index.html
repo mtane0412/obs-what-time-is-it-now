@@ -46,7 +46,11 @@ pre + p a {
 </style>
 </head>
 <body>
+<header>
 <h1>現在時刻</h1>
+</header>
+
+<main>
 <p id="time" aria-live="polite">00:00:00</p>
 
 <div id="custom">
@@ -61,12 +65,16 @@ body {
   background: white; /* 任意の色を指定します */
 }
 
-h1, #custom {
+header, #custom, footer {
   display: none;
 }</code></pre>
 
-<p><a href="https://github.com/KawarabeEcma/what-time-is-it-now">Contact (GitHub)</a></p>
 </div>
+</main>
+
+<footer>
+<p><a href="https://github.com/KawarabeEcma/what-time-is-it-now">Contact (GitHub)</a></p>
+</footer>
 <script>
 const time = document.getElementById('time');
 
