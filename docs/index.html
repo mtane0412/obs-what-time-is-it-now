@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What is it now?</title>
+<style>
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+h1 {
+  margin: 100px 0 10px;
+}
+#time {
+  font-size: 100px;
+  font-family: sans-serif;
+  text-align: center;
+  line-height: 1;
+}
+h2 + p {
+  margin: 10px 0;
+}
+#custom {
+  margin: 40px 0 100px;
+}
+pre {
+  margin: 14px 0 0;
+  padding: 10px;
+  background: #f1f1f1;
+}
+</style>
+</head>
+<body>
+<h1>現在時刻</h1>
+<p id="time" aria-live="polite">00:00:00</p>
+
+<div id="custom">
+<h2>カスタムCSS</h2>
+<p>500x150程度で読み込んでください。</p>
+<pre><code>body {
+  overflow: hidden;
+  background: white;
+}
+
+h1, #custom {
+  display: none;
+}</code></pre>
+</div>
+<script>
+const time = document.getElementById('time');
+
+setInterval(() => {
+  const date = new Date();
+
+  time.textContent = date.toLocaleTimeString('JP-ja', {
+    hour12: false,
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+  });
+}, 1000);
+</script>
+</body>
+</html>
