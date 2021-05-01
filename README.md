@@ -18,3 +18,9 @@ Displays the current time.
     - 「高さ」に「150」と入力する
     - 「カスタムCSS」に任意のCSSを記述する
 4. 「OK」を押す
+
+## 免責事項
+
+- 当該ページを利用したことによって生じた損害等の一切の責任を負いかねます
+- GitHubアカウントをお持ちの方はforkしてから使っていただけるとうれしいです
+- [GitHub Pagesのガイドライン](https://docs.github.com/ja/pages/getting-started-with-github-pages/about-github-pages)
