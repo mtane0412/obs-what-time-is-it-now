@@ -21,6 +21,12 @@ select {
   font-size: 100%;
 }
 
+ol {
+  li {
+    list-style-position: inside;
+  }
+}
+
 :focus {
   outline: 0;
   box-shadow: 0 0 0 6px rgb(50, 178, 201);
