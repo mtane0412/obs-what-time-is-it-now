@@ -1,0 +1,149 @@
+import React, { useState, useEffect } from 'react';
+import styles from './Controller.module.scss';
+import {Fieldset} from './Fieldset';
+import {Label} from './Label';
+import {Checkbox} from './Checkbox';
+
+type Props = {
+  children?: React.ReactNode,
+};
+
+const styleElement = document.createElement('style');
+
+export function Controller(props: Props) {
+  const [bgColor, setBgColor] = useState('#ffffff');
+  const [color, setColor] = useState('#000000');
+  const [weight, setWeight] = useState('normal');
+  const [fontFamily, setfontFamily] = useState('sans-serif');
+  const [isTransparent, setIsTransparent] = useState(true);
+  const colorChange = (e: React.SyntheticEvent) => {
+    const input = e.target as HTMLInputElement;
+
+    return setColor(input.value);
+  };
+  const weightChange = (e: React.SyntheticEvent) => {
+    const select = e.target as HTMLSelectElement;
+
+    return setWeight(select.value);
+  };
+  const fontFamilyChange = (e: React.SyntheticEvent) => {
+    const input = e.target as HTMLInputElement;
+
+    return setfontFamily(input.value);
+  };
+  const transparentChange = (e: React.SyntheticEvent) => {
+    const input = e.target as HTMLInputElement;
+
+    return setIsTransparent(input.checked);
+  };
+  const bgColorChange = (e: React.SyntheticEvent) => {
+    const input = e.target as HTMLInputElement;
+
+    return setBgColor(input.value);
+  };
+  const Css = function () {
+    const onFocus = function (e: React.SyntheticEvent) {
+      const textarea = e.target as HTMLTextAreaElement;
+
+      textarea.select();
+    };
+
+    return (
+      <p>
+        <textarea onFocus={onFocus} className={styles.result} value={
+        `#time {
+  /* ここに時間の見た目のCSSを記述 */
+  color: ${color};
+  font-weight: ${weight};
+  font-family: ${fontFamily};
+}
+
+body {
+  overflow: hidden;
+  background: ${isTransparent ? 'transparent' : bgColor};
+}
+header, #controller, footer {
+  display: none;
+}
+main {
+  align-self: auto;
+  width: auto;
+}
+#target {
+  margin: 0;
+  border: 0;
+  background: transparent;
+}
+#target__inner {
+  padding: 0;
+}
+        `} readOnly/>
+      </p>
+    );
+  };
+
+  styleElement.textContent = `#time {
+    color: ${color};
+    font-weight: ${weight};
+    font-family: ${fontFamily};
+  }
+
+  #target__inner {
+    background: ${isTransparent ? 'transparent' : bgColor};
+  }`;
+
+  useEffect(() => {
+    document.head.append(styleElement);
+  });
+
+  return (
+    <div id="controller" className={styles.wrap}>
+      {props.children}
+
+      <Fieldset legend="前景色">
+        <Label name="文字色">
+          <input type="color" onChange={colorChange} className={styles.input} />
+        </Label>
+
+        <Label name="文字の太さ">
+          <select
+            onChange={weightChange}
+            defaultValue="normal"
+            className={styles.input}
+          >
+            <option>normal</option>
+            <option>bold</option>
+          </select>
+        </Label>
+
+        <Label name="フォント">
+          <input
+            onChange={fontFamilyChange}
+            value={fontFamily}
+            className={styles.input}
+          />
+        </Label>
+      </Fieldset>
+
+      <Fieldset legend="背景色">
+        <Label name="透過">
+          <Checkbox
+            checked={isTransparent}
+            onChange={transparentChange}
+          />
+        </Label>
+
+        <Label name="背景色" disabled={isTransparent}>
+          <input
+            type="color"
+            value={bgColor}
+            onChange={bgColorChange}
+            className={styles.input} disabled={isTransparent}
+          />
+        </Label>
+      </Fieldset>
+
+      <Css />
+    </div>
+  );
+}

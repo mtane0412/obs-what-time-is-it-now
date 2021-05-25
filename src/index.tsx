@@ -1,12 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import {Header} from './component/Header';
+import {Footer} from './component/Footer';
+import {Time} from './component/Time';
+import {Controller} from './component/Controller';
 import reportWebVitals from './reportWebVitals';
+import './styles/common.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Header />
+
+    <main>
+      <Time />
+      <Controller>
+        <h2>OBS用カスタムCSS</h2>
+        <p>OBSでは500x150程度で読み込んでください。</p>
+      </Controller>
+    </main>
+
+    <Footer />
   </React.StrictMode>,
   document.getElementById('root')
 );

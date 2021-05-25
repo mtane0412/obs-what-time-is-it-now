@@ -1,0 +1,42 @@
+.wrap {
+  padding: 16px 20px;
+  margin: 12px 0;
+  background:#bde8dc;
+  border-radius: 6px;
+
+  &[data-disabled="true"] {
+    opacity: .4;
+  }
+
+  &:hover {
+    background:#97d6c5;
+  }
+}
+
+.label {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  align-items: center;
+
+  .input {
+    margin: 0 20px 0 0;
+    width: 160px;
+    text-align: center;
+
+    input,
+    select {
+      display: block;
+      width: 100%;
+    }
+
+    input[type="color"] {
+      min-height: 80px;
+    }
+
+    input:not([type="color"]),
+    select {
+      padding: 10px 6px;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+.fieldset {
+  padding: 0;
+  margin: 40px 0;
+  border: 0;
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.legend {
+  font-weight: bold;
+
+  + * {
+    margin-top: 0;
+  }
+}

@@ -1,0 +1,22 @@
+.wrap {
+  position: sticky;
+  top: 30px;
+  margin: 0 0 100px;
+  border: 1px solid #ccc;
+  background: linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%),
+              linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%);
+  background-color: #ddd;
+  background-size: 26px 26px;
+  background-position: 0 0, 13px 13px;
+}
+
+.inner {
+  padding: 30px;
+}
+
+.time {
+  font-size: 100px;
+  font-family: sans-serif;
+  text-align: center;
+  line-height: 1;
+}
