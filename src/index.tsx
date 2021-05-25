@@ -14,8 +14,15 @@ ReactDOM.render(
     <main>
       <Time />
       <Controller>
-        <h2>OBS用カスタムCSS</h2>
-        <p>OBSでは500x150程度で読み込んでください。</p>
+        <h2>OBS用カスタムCSSジェネレータ</h2>
+        <p>次の手順でご利用ください。</p>
+        <ul>
+          <li>OBSでブラウザソースを追加（新規作成）</li>
+          <li>URL：このページのURLを設定</li>
+          <li>幅：500程度</li>
+          <li>高さ：150程度</li>
+          <li>カスタムCSS：ページ下部のものを設定</li>
+        </ul>
       </Controller>
     </main>
 
