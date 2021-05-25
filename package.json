@@ -1,0 +1,23 @@
+{
+  "name": "what-time-is-it-now",
+  "version": "1.0.0",
+  "description": "Displays the current time.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KawarabeEcma/what-time-is-it-now.git"
+  },
+  "keywords": [],
+  "author": "heppokofrontend",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KawarabeEcma/what-time-is-it-now/issues"
+  },
+  "homepage": "https://github.com/KawarabeEcma/what-time-is-it-now#readme"
+}
