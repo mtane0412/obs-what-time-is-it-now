@@ -9,35 +9,62 @@ type Props = {
 };
 
 const styleElement = document.createElement('style');
+const saveData: any = (() => {
+  try {
+    return JSON.parse(localStorage.getItem('obs-time-css') || '{}');
+  } catch {
+    return {};
+  }
+})();
+const saveDataSave = () => {
+  localStorage.setItem('obs-time-css', JSON.stringify(saveData));
+};
 
 export function Controller(props: Props) {
-  const [bgColor, setBgColor] = useState('#ffffff');
-  const [color, setColor] = useState('#000000');
-  const [weight, setWeight] = useState('normal');
-  const [fontFamily, setfontFamily] = useState('sans-serif');
-  const [isTransparent, setIsTransparent] = useState(true);
+  const [bgColor, setBgColor] = useState(saveData.bgColor || '#ffffff');
+  const [color, setColor] = useState(saveData.color || '#000000');
+  const [weight, setWeight] = useState(saveData.weight || 'normal');
+  const [fontFamily, setfontFamily] = useState(saveData.fontFamily || 'sans-serif');
+  const [isTransparent, setIsTransparent] = useState(saveData.isTransparent ?? true);
+  console.log(isTransparent, 0);
+
   const colorChange = (e: React.SyntheticEvent) => {
     const input = e.target as HTMLInputElement;
+
+    saveData.color = input.value;
+    saveDataSave();
 
     return setColor(input.value);
   };
   const weightChange = (e: React.SyntheticEvent) => {
-    const select = e.target as HTMLSelectElement;
+    const input = e.target as HTMLSelectElement;
 
-    return setWeight(select.value);
+    saveData.weight = input.value;
+    saveDataSave();
+
+    return setWeight(input.value);
   };
   const fontFamilyChange = (e: React.SyntheticEvent) => {
     const input = e.target as HTMLInputElement;
+
+    saveData.fontFamily = input.value;
+    saveDataSave();
 
     return setfontFamily(input.value);
   };
   const transparentChange = (e: React.SyntheticEvent) => {
     const input = e.target as HTMLInputElement;
 
+    saveData.isTransparent = input.checked;
+    saveDataSave();
+
     return setIsTransparent(input.checked);
   };
   const bgColorChange = (e: React.SyntheticEvent) => {
     const input = e.target as HTMLInputElement;
+
+    saveData.bgColor = input.value;
+    saveDataSave();
 
     return setBgColor(input.value);
   };
@@ -93,7 +120,7 @@ main {
   }`;
 
   useEffect(() => {
-    document.head.append(styleElement);
+    document.head.append(styleElement)
   });
 
   return (
@@ -102,13 +129,18 @@ main {
 
       <Fieldset legend="前景色">
         <Label name="文字色">
-          <input type="color" onChange={colorChange} className={styles.input} />
+          <input
+            type="color"
+            value={color}
+            onChange={colorChange}
+            className={styles.input}
+          />
         </Label>
 
         <Label name="文字の太さ">
           <select
             onChange={weightChange}
-            defaultValue="normal"
+            value={weight}
             className={styles.input}
           >
             <option>normal</option>

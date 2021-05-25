@@ -5,7 +5,7 @@ type Props = Partial<DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HT
 
 export function Checkbox(attr: Props = {}) {
   const {onChange, ...props} = attr;
-  const [state, setState] = useState(true);
+  const [state, setState] = useState(props.checked ?? true);
   const _onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const checkbox = e.target as HTMLInputElement;
 
