@@ -79,7 +79,7 @@ export function Controller(props: Props) {
       <p>
         <textarea onFocus={onFocus} className={styles.result} value={
         `#time {
-  /* ここに時間の見た目のCSSを記述 */
+  /* ここに時間の見た目のCSSを追記可能 */
   color: ${color};
   font-weight: ${weight};
   font-family: ${fontFamily};
