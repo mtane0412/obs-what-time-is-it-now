@@ -40,6 +40,7 @@
     ]
   },
   "homepage": "https://kawarabeecma.github.io/what-time-is-it-now/",
+  "license": "MIT",
   "private": true,
   "scripts": {
     "build": "react-scripts build",
