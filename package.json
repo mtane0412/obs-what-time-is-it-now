@@ -1,5 +1,5 @@
 {
-  "name": "what-time-is-it-now",
+  "name": "obs-what-time-is-it-now",
   "version": "0.1.0",
   "browserslist": {
     "production": [
@@ -39,7 +39,7 @@
       "react-app/jest"
     ]
   },
-  "homepage": "https://kawarabeecma.github.io/what-time-is-it-now/",
+  "homepage": "https://kawarabeecma.github.io/obs-what-time-is-it-now/",
   "license": "MIT",
   "private": true,
   "scripts": {

@@ -19,7 +19,7 @@
     }
   ],
   "start_url": ".",
-  "scope": "/what-time-is-it-now",
+  "scope": "/obs-what-time-is-it-now",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"
