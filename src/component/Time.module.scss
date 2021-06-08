@@ -1,6 +1,7 @@
 .wrap {
   position: sticky;
   top: 30px;
+  z-index: 1;
   margin: 0 0 100px;
   border: 1px solid #ccc;
   background: linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%),
