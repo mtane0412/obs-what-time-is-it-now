@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import i18n from 'i18next';
 import '../locales/i18n';
 import {useTranslation} from 'react-i18next';
-import Helmet from 'react-helmet';
+import {Helmet, HelmetProvider} from 'react-helmet-async';
 import styles from './Header.module.scss';
 
 const langName = {
@@ -18,9 +18,11 @@ export function Header() {
 
   return (
     <header className={styles.header}>
-      <Helmet>
-        <html lang={lang} />
-      </Helmet>
+      <HelmetProvider>
+        <Helmet>
+          <html lang={lang} />
+        </Helmet>
+      </HelmetProvider>
 
       <h1 className={styles.h1}>{t('現在時刻')}</h1>
       <p>
