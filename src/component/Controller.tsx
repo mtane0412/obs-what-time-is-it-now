@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from './Controller.module.scss';
+import {useTranslation} from 'react-i18next';
 import {Fieldset} from './Fieldset';
 import {Label} from './Label';
 import {Checkbox} from './Checkbox';
@@ -26,6 +27,7 @@ export function Controller(props: Props) {
   const [weight, setWeight] = useState(saveData.weight || 'normal');
   const [fontFamily, setfontFamily] = useState(saveData.fontFamily || 'sans-serif');
   const [isTransparent, setIsTransparent] = useState(saveData.isTransparent ?? true);
+  const { t } = useTranslation();
   console.log(isTransparent, 0);
 
   const colorChange = (e: React.SyntheticEvent) => {
@@ -77,9 +79,9 @@ export function Controller(props: Props) {
 
     return (
       <p>
-        <textarea onFocus={onFocus} className={styles.result} value={
+        <textarea aria-label={t('カスタムCSS')} onFocus={onFocus} className={styles.result} value={
         `#time {
-  /* ここに時間の見た目のCSSを追記可能 */
+  /* ${t('ここに時間の見た目のCSSを追記可能')} */
   color: ${color};
   font-weight: ${weight};
   font-family: ${fontFamily};
@@ -90,7 +92,7 @@ body {
   background: ${isTransparent ? 'transparent' : bgColor};
 }
 header, #controller, footer {
-  display: none;
+  display: none !important;
 }
 main {
   align-self: auto;
@@ -127,8 +129,8 @@ main {
     <div id="controller" className={styles.wrap}>
       {props.children}
 
-      <Fieldset legend="前景色">
-        <Label name="文字色">
+      <Fieldset legend={t('前景色')}>
+        <Label name={t('文字色')}>
           <input
             type="color"
             value={color}
@@ -137,7 +139,7 @@ main {
           />
         </Label>
 
-        <Label name="文字の太さ">
+        <Label name={t('文字の太さ')}>
           <select
             onChange={weightChange}
             value={weight}
@@ -148,7 +150,7 @@ main {
           </select>
         </Label>
 
-        <Label name="フォント">
+        <Label name={t('フォント')}>
           <input
             onChange={fontFamilyChange}
             value={fontFamily}
@@ -157,15 +159,15 @@ main {
         </Label>
       </Fieldset>
 
-      <Fieldset legend="背景色">
-        <Label name="透過">
+      <Fieldset legend={t('背景色')}>
+        <Label name={t('透過')}>
           <Checkbox
             checked={isTransparent}
             onChange={transparentChange}
           />
         </Label>
 
-        <Label name="背景色" disabled={isTransparent}>
+        <Label name={t('背景色')} disabled={isTransparent}>
           <input
             type="color"
             value={bgColor}

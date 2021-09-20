@@ -9,6 +9,11 @@ body {
   place-items: center;
   min-height: 100vh;
   font-size: 1rem;
+  line-height: 1.6;
+}
+
+html[lang="en"] body {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, "Yu Gothic", YuGothic, Verdana, Meiryo, sans-serif;
 }
 
 main {

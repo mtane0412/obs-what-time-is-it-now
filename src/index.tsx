@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './locales/i18n';
+import {useTranslation} from 'react-i18next';
 import {Header} from './component/Header';
 import {Footer} from './component/Footer';
 import {Time} from './component/Time';
@@ -7,24 +9,32 @@ import {Controller} from './component/Controller';
 import reportWebVitals from './reportWebVitals';
 import './styles/common.scss';
 
+const Main = () => {
+  const { t } = useTranslation();
+
+  return (
+    <main>
+      <Time />
+      <Controller>
+        <h2>{t('OBS用カスタムCSSジェネレータ')}</h2>
+        <p>{t('次の手順でご利用ください。')}</p>
+        <ol>
+          <li>{t('OBSでブラウザソースを追加（新規作成）')}</li>
+          <li>{t('URL：このページのURLを設定')}</li>
+          <li>{t('幅：500程度')}</li>
+          <li>{t('高さ：150程度')}</li>
+          <li>{t('カスタムCSS：ページ下部のものを設定')}</li>
+        </ol>
+      </Controller>
+    </main>
+  );
+};
+
 ReactDOM.render(
   <React.StrictMode>
     <Header />
 
-    <main>
-      <Time />
-      <Controller>
-        <h2>OBS用カスタムCSSジェネレータ</h2>
-        <p>次の手順でご利用ください。</p>
-        <ol>
-          <li>OBSでブラウザソースを追加（新規作成）</li>
-          <li>URL：このページのURLを設定</li>
-          <li>幅：500程度</li>
-          <li>高さ：150程度</li>
-          <li>カスタムCSS：ページ下部のものを設定</li>
-        </ol>
-      </Controller>
-    </main>
+    <Main />
 
     <Footer />
   </React.StrictMode>,
