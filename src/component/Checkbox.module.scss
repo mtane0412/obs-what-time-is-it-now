@@ -6,7 +6,7 @@
   height: 100%;
   opacity: 0;
 
-  &:focus + .state::before {
+  &:focus-visible + .state::before {
     box-shadow: 0 0 0 6px rgb(50, 178, 201);
   }
 }
