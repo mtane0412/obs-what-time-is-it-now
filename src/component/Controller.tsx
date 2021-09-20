@@ -28,7 +28,7 @@ export function Controller(props: Props) {
   const [fontFamily, setfontFamily] = useState(saveData.fontFamily || 'sans-serif');
   const [isTransparent, setIsTransparent] = useState(saveData.isTransparent ?? true);
   const { t } = useTranslation();
-  console.log(isTransparent, 0);
+  // console.log(isTransparent, 0);
 
   const colorChange = (e: React.SyntheticEvent) => {
     const input = e.target as HTMLInputElement;
