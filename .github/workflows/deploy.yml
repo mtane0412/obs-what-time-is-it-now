@@ -16,6 +16,9 @@ jobs:
           npm i -g yarn
           yarn
           yarn build
+          mv build obs-what-time-is-it-now
+          mkdir build
+          mv obs-what-time-is-it-now/ build/
 
       - name: Deploy
         env:
