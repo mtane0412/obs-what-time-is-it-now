@@ -1,4 +1,4 @@
-# OBS向け現在時刻
+# OBSに現在時刻を表示するやつ
 
 Displays the current time.
 
