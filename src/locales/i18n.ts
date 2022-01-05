@@ -7,7 +7,7 @@ import { initReactI18next } from 'react-i18next';
 const resources = {
   en: {
     translation: {
-      '現在時刻': 'The current time',
+      '現在時刻': 'The current time for OBS',
       'OBS用カスタムCSSジェネレータ': 'Custom CSS Generator for OBS',
       '次の手順でご利用ください。': 'Please follow the steps below to use it:',
       'OBSでブラウザソースを追加（新規作成）': 'Add a browser source in OBS (create a new one)',
