@@ -1,0 +1,21 @@
+{
+  "short_name": "OBS What Time Is It Now",
+  "name": "OBS What Time Is It Now",
+  "icons": [
+    {
+      "src": "logo.png",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "logo.png",
+      "type": "image/png",
+      "sizes": "640x640"
+    }
+  ],
+  "start_url": ".",
+  "scope": "/obs-what-time-is-it-now",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
